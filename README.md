@@ -48,24 +48,39 @@ Power BI Dashboard
 ---
 
 ## 📂 Project Structure
+```
 snowflake-financial-pipeline/
+│
 ├── data_generator/
-│   └── generate_transactions.py    # Simulates financial transactions
+│   └── generate_transactions.py      # Simulates financial transactions
+│
 ├── snowflake/
-│   ├── 01_setup.sql               # Database, schemas, warehouse
-│   ├── 02_snowpipe.sql            # Snowpipe + S3 integration
-│   └── 03_streams_tasks.sql       # CDC pipeline
+│   ├── 01_setup.sql                  # Database, schemas, warehouse
+│   ├── 02_snowpipe.sql               # Snowpipe + S3 integration
+│   └── 03_streams_tasks.sql          # CDC pipeline
+│
 ├── dbt_financial/
 │   ├── models/
-│   │   ├── staging/               # Silver layer views
-│   │   └── gold/                  # Gold layer tables
+│   │   ├── staging/
+│   │   │   ├── stg_transactions.sql  # Silver layer view
+│   │   │   ├── sources.yml
+│   │   │   └── schema.yml            # 13 data quality tests
+│   │   └── gold/
+│   │       ├── fct_transactions_daily.sql
+│   │       ├── fct_customer_summary.sql
+│   │       └── fct_fraud_analysis.sql
 │   └── dbt_project.yml
+│
 ├── airflow/
 │   └── dags/
-│       └── financial_pipeline_dag.py
+│       └── financial_pipeline_dag.py # 4-task orchestration DAG
+│
 ├── powerbi/
-│   └── financial_dashboard.pbix
+│   ├── financial_dashboard.pbix
+│   └── screenshots/
+│
 └── README.md
+```
 ---
 
 ## 🔄 Pipeline Stages
