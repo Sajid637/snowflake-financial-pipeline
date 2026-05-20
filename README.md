@@ -130,15 +130,21 @@ snowflake-financial-pipeline/
 
 ---
 
-## 📊 Dashboard Screenshots
+## 📸 Project Screenshots
 
-### Transaction Overview
+### Airflow Pipeline DAG
+![Airflow DAG](powerbi/screenshots/airflow_dag_lineage.png)
+
+### dbt Documentation
+![dbt Docs](powerbi/screenshots/dbt_docs.png)
+
+### Power BI — Transaction Overview
 ![Transaction Overview](powerbi/screenshots/transaction_overview.png)
 
-### Customer Analysis
+### Power BI — Customer Analysis
 ![Customer Analysis](powerbi/screenshots/customer_analysis.png)
 
-### Fraud & Risk Analysis
+### Power BI — Fraud & Risk Analysis
 ![Fraud Analysis](powerbi/screenshots/fraud_analysis.png)
 
 ---
