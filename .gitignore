@@ -1,0 +1,24 @@
+# Environment variables - NEVER commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# dbt
+dbt_financial/target/
+dbt_financial/logs/
+dbt_financial/.user.yml
+logs/
+
+# Airflow
+airflow/.astro/
+airflow/airflow.db
+
+# Power BI temp files
+*.pbix.bak
+
+# OS files
+.DS_Store
+Thumbs.db

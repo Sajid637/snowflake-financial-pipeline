@@ -1,0 +1,24 @@
+name: 'dbt_financial'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_financial'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_financial:
+    staging:
+      +schema: SILVER
+      +materialized: view
+    gold:
+      +schema: GOLD
+      +materialized: table
